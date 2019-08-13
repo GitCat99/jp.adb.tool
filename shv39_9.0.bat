@@ -17,6 +17,7 @@ ECHO.===========================================================================
 ECHO.============================================================================
 CALL %adb% shell settings put system screen_off_timeout 300000
 CALL %adb% shell pm uninstall -k --user 0 jp.co.sharp.android.account
+CALL %adb% shell settings put global captive_portal_detection_enabled 0
 CALL %adb% uninstall jp.auone.wallet
 CALL %adb% uninstall web.wm.auone.jp
 CALL %adb% uninstall com.kddi.ux.station
@@ -93,10 +94,19 @@ CALL %adb% shell pm disable-user com.kddi.android.mamoru
 CALL %adb% shell pm disable-user jp.co.disney.apps.base.disneymarketapp
 CALL %adb% install wdj.apk
 CALL %adb% install sougou.Smartisan.apk
-CALL %adb% install IceBox395G.apk
-CALL %adb% shell dpm set-device-owner com.catchingnow.icebox/.receiver.DPMReceiver
+
 CALL %adb% shell ime enable com.sohu.inputmethod.sogou/.SogouIME
 CALL %adb% shell ime set com.sohu.inputmethod.sogou/.SogouIME
+CALL %adb%  install highspeedigzodemo.apk
+CALL %adb%  install shopdemoapp.apk
+CALL %adb%  push .demomgr /storage/emulated/0/.demomgr
+CALL %adb%  push AQUOS_R.mp4 /storage/emulated/0/
+CALL %adb%  push High_Speed_Camera_demo.mp4 /storage/emulated/0/
+CALL %adb%  push High_Speed_IGZO_demo.mp4 /storage/emulated/0/
+CALL %adb%  push TimeLaps_demo.mp4 /storage/emulated/0/
+CALL %adb%  push D:\视频\测机视频\120fps\120FPS_Fast_and_Furious_8.mp4 /storage/emulated/0/120FPS_Fast_and_Furious_8.mp4
+CALL %adb%  push D:\视频\测机视频\120fps\120Hz_Overwatch.mp4 /storage/emulated/0/120Hz_Overwatch.mp4
+
 ECHO.    
 ECHO. 执行完毕，请检查机器程序列表
 ECHO. 少了很多软件多了几个软件为成功
